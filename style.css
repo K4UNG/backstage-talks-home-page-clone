@@ -1,0 +1,192 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --cyan: #00c1b5;
+    --orange: #ff651a;
+    --yellow: #ffbe00;
+    --blue: #1d3fbb;
+    --red: #e30512;
+
+    --normal-plus: 1.4rem;
+    --normal: 1.2rem;
+    --small: 1rem;
+    --small-plus: .8rem;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    cursor: pointer;
+}
+
+/* ========main=========== */
+
+main {
+    transition:  300ms ease;
+}
+
+.page {
+    /* scroll-snap-align: start; */
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2em;
+    font-weight: 600;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 170px;
+}
+
+.page img:last-of-type {
+    max-width: 400px;
+}
+
+.page a {
+    color: white;
+    text-decoration: none;
+}
+
+.page a:hover {
+    text-decoration: underline;
+}
+
+.page h2,
+.page>a {
+    font-size: var(--normal);
+}
+
+.page p {
+    font-size: var(--small);
+}
+
+.page h2,
+.page p {
+    margin: .5em 0;
+}
+
+/* =====details========== */
+
+nav {
+    display: none;
+}
+
+.details {
+    font-weight: 600;
+    text-align: center;
+    padding: 1em;
+}
+
+.details p:first-child {
+    margin-bottom: .3em;
+}
+
+.text-wrapper a {
+    color: black;
+}
+
+.text-wrapper a:hover {
+    text-decoration: none;
+}
+
+.copyright {
+    font-size: var(--small-plus);
+    font-weight: 400;
+}
+
+.about {
+    font-size: var(--normal);
+}
+
+.text-wrapper>a {
+    display: block;
+    margin: 1.3em 0;
+    font-size: var(--normal-plus);
+    font-weight: 750;
+}
+
+.mail {
+    margin: 3em 0 1em;
+}
+
+@media (min-width: 1000px) {
+    main {
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        overflow-y: scroll;
+        height: 100vh;
+        position: relative;
+    }
+
+    .page {
+        scroll-snap-align: start;
+        position: static;
+        z-index: 5;
+    }
+
+    .logo {
+        position: fixed;
+    }
+
+    .mail {
+        position: fixed;
+        top: 20px;
+        right: 30px;
+        margin: 0;
+    }
+
+    .text-wrapper {
+        position: fixed;
+        width: 30%;
+        text-align: left;
+        bottom: 10px;
+        left: 20px;
+        max-width: 400px;
+    }
+
+    nav {
+        display: unset;
+        position: fixed;
+        bottom: 10px;
+        right: 50px;
+    }
+
+    nav ul {
+        list-style: none;
+    }
+
+    nav li {
+        margin: 1em 0;
+    }
+
+    nav a {
+        font-size: var(--normal);
+        font-weight: 500;
+        color: black;
+        text-decoration: none;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    nav a.current {
+        font-weight: 600;
+    }
+}
